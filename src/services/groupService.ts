@@ -11,13 +11,11 @@ import { Resource } from "../interfaces/resource";
 const URL = "/group";
 
 class GroupService {
-  async gerGroupService(
-    r: GroupByIdRequest
-  ): Promise<axiosResponse<Group> | axiosError> {
+  async getAllGroups(): Promise<axiosResponse<Group[]> | axiosError> {
     let response: AxiosResponse;
     let result;
     try {
-      response = await APIClient.get(URL, { params: { id: r.id } });
+      response = await APIClient.get(`${URL}`);
       result = axiosHelper.handleResponse(response);
     } catch (err: any) {
       result = axiosHelper.handleError(err);
@@ -25,7 +23,21 @@ class GroupService {
     return result;
   }
 
-  async createGroup(r: Group): Promise<axiosResponse<Resource> | axiosError> {
+  async getGroupService(
+    r: GroupByIdRequest
+  ): Promise<axiosResponse<Group> | axiosError> {
+    let response: AxiosResponse;
+    let result;
+    try {
+      response = await APIClient.get(`${URL}/find`, { params: { id: r.id } });
+      result = axiosHelper.handleResponse(response);
+    } catch (err: any) {
+      result = axiosHelper.handleError(err);
+    }
+    return result;
+  }
+
+  async createGroup(r: Group): Promise<axiosResponse<Group> | axiosError> {
     let response: AxiosResponse;
     let result;
     try {
