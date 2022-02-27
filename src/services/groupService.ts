@@ -1,20 +1,19 @@
-// /**
-//  * @packageDocumentation
-//  * @module Services/Resource
-//  * Interacts with the Resource service.
-//  */
 import { AxiosResponse } from "axios";
 import axiosHelper, { axiosError, axiosResponse } from "../utils/axiosHelper";
-import { ResourceByIdRequest, Resource } from "../interfaces/resource";
 import { APIClient } from "../services/commonService";
+import { Group, GroupByIdRequest } from "../interfaces/group";
+import { Resource } from "../interfaces/resource";
+
 /**
  * API Client to interact with the service.
  */
-const URL = `/resource`;
-class ResourceService {
-  async getResource(
-    r: ResourceByIdRequest
-  ): Promise<axiosResponse<Resource> | axiosError> {
+
+const URL = "/group";
+
+class GroupService {
+  async gerGroupService(
+    r: GroupByIdRequest
+  ): Promise<axiosResponse<Group> | axiosError> {
     let response: AxiosResponse;
     let result;
     try {
@@ -26,9 +25,7 @@ class ResourceService {
     return result;
   }
 
-  async createResource(
-    r: Resource
-  ): Promise<axiosResponse<Resource> | axiosError> {
+  async createGroup(r: Group): Promise<axiosResponse<Resource> | axiosError> {
     let response: AxiosResponse;
     let result;
     try {
@@ -40,4 +37,5 @@ class ResourceService {
     return result;
   }
 }
-export default new ResourceService();
+
+export default new GroupService();

@@ -3,9 +3,9 @@ export type ResourceByIdRequest = {
 };
 
 export type Resource = {
-  id: string;
+  id?: string;
   title: string;
   description: string;
   url: string;
-  groups: string;
+  group: string;
 };
