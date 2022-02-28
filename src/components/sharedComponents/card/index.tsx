@@ -7,12 +7,28 @@ import { useCardStyles } from "./styles";
 export interface propsCard {
   group: Group;
 }
+
+const Subtitle = () => {
+  return <div>index</div>;
+};
+
 export default function CardShared({ group }: propsCard) {
   const classes = useCardStyles();
   return (
     <Card className={classes.container}>
       <CardContent className={classes.containerContent}>
-        <Typography className={classes.title}>{group.title}</Typography>
+        <div className={classes.containerTitle}>
+          {group.resources.length > 0 ? (
+            <Typography className={classes.subTitle}>
+              Recursos:{group.resources.length}
+            </Typography>
+          ) : (
+            <Typography className={classes.subTitle}>
+              No posee recursos aun!
+            </Typography>
+          )}
+          <Typography className={classes.title}>{group.title}</Typography>
+        </div>
       </CardContent>
     </Card>
   );

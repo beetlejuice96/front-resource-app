@@ -13,12 +13,21 @@ export const useCardStyles = makeStyles({
     minWidth: "275px",
     minHeight: "130px",
   },
-  title: {
-    color: "#fff",
-    fontWeight: "800 !important",
+  containerTitle: {
     position: "absolute",
     left: "20px",
     bottom: "20px",
+  },
+  title: {
+    color: "#fff",
+    fontWeight: "800 !important",
     fontSize: "35px !important",
+  },
+  subTitle: {
+    color: "#fff",
+    fontSize: "15px !important",
+    fontWeight: "600 !important",
+    lineHeight: "1px !important",
+    textAlign: "start",
   },
 });
