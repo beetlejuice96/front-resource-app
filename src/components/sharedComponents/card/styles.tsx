@@ -10,13 +10,14 @@ export const useCardStyles = makeStyles({
   },
   containerContent: {
     position: "relative",
-    minWidth: "275px",
-    minHeight: "130px",
+    minWidth: "inherit",
+    minHeight: "inherit",
   },
   containerTitle: {
     position: "absolute",
     left: "20px",
     bottom: "20px",
+    textAlign: "start",
   },
   title: {
     color: "#fff",
