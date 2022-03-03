@@ -4,7 +4,14 @@ import { styled, Theme } from "@mui/system";
 export const useNavBarStyles = makeStyles((theme: Theme) =>
   createStyles({
     drawer: {
-      background: "#313a46",
+      [theme.breakpoints.up("sm")]: {
+        display: "none",
+      },
+    },
+    drawerLink: {
+      alignItems: "center",
+      display: "flex",
+      flexDirection: "column",
     },
     bar: {
       backgroundColor: "white",
@@ -20,10 +27,35 @@ export const useNavBarStyles = makeStyles((theme: Theme) =>
       justifyContent: "space-between",
     },
     menuButton: {
-      display: "none !important",
+      display: "inline-flex !important",
+
       [theme.breakpoints.up("sm")]: {
-        display: "inline-flex !important",
+        display: "none !important",
       },
+    },
+    navButton: {
+      margin: "10px 5px !important",
+      textDecoration: " none !important",
+      [theme.breakpoints.up("sm")]: {
+        margin: "0 10px !important",
+        fontSize: "1.4rem!important",
+        fontWeight: "100!important",
+        textTransform: "capitalize",
+        color: "black",
+      },
+    },
+    mainLink: {
+      alignItems: "center",
+      display: "flex",
+      textDecoration: "none !important",
+    },
+    title: {
+      fontSize: "1.5rem !important",
+      color: "gray",
+      marginLeft: "10px !important",
+    },
+    notUnderLine: {
+      textDecoration: "none !important",
     },
   })
 );

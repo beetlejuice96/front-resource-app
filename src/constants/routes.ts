@@ -1,4 +1,4 @@
 const MAIN = `/`;
-const EXAMPLE = `WWW.GOOGLE.COM`;
+const EXAMPLE = `https://www.google.com`;
 const routes = { MAIN, EXAMPLE };
 export default routes;
