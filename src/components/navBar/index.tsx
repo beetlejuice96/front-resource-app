@@ -51,7 +51,7 @@ const NavBar = (): JSX.Element => {
             </IconButton>
             <Link to={ROUTES.MAIN} className={classes.notUnderLine}>
               <div className={classes.mainLink}>
-                <img src="/logo.png" alt="logo" />
+                <img height={60} src="/logo.png" alt="logo" />
                 <Typography className={classes.title}>ResourcesApp</Typography>
               </div>
             </Link>
