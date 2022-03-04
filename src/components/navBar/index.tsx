@@ -35,6 +35,9 @@ const NavBar = (): JSX.Element => {
           <a href={ROUTES.EXAMPLE} className={classes.notUnderLine}>
             <Typography>Example</Typography>
           </a>
+          <Link to={ROUTES.ABOUTME} className={classes.notUnderLine}>
+            <Typography className={classes.navButton}>About me</Typography>
+          </Link>
         </div>
       </SwipeableDrawer>
       <div className={classes.bar}>
@@ -62,6 +65,9 @@ const NavBar = (): JSX.Element => {
               <a href={ROUTES.EXAMPLE} className={classes.notUnderLine}>
                 <Typography className={classes.navButton}>Example</Typography>
               </a>
+              <Link to={ROUTES.ABOUTME} className={classes.notUnderLine}>
+                <Typography className={classes.navButton}>About me</Typography>
+              </Link>
             </NavLinks>
           </Toolbar>
         </AppBar>

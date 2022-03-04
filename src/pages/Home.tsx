@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
+import Hero from "../components/hero";
 import CardShared from "../components/sharedComponents/card";
 import { Group } from "../interfaces/group";
 import { Resource, ResourceByIdRequest } from "../interfaces/resource";
@@ -67,11 +68,14 @@ const Home = () => {
   }, []);
 
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
-      {groups.map((group) => (
-        <CardShared group={group}></CardShared>
-      ))}
-    </div>
+    <Fragment>
+      <Hero />
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        {groups.map((group) => (
+          <CardShared group={group}></CardShared>
+        ))}
+      </div>
+    </Fragment>
   );
 };
 
