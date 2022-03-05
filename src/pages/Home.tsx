@@ -1,5 +1,6 @@
 import { Fragment, useEffect, useState } from "react";
 import Hero from "../components/hero";
+import SectionAddGroup from "../components/sectionAddGroup";
 import CardShared from "../components/sharedComponents/card";
 import { Group } from "../interfaces/group";
 import { Resource, ResourceByIdRequest } from "../interfaces/resource";
@@ -70,11 +71,12 @@ const Home = () => {
   return (
     <Fragment>
       <Hero />
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <SectionAddGroup></SectionAddGroup>
+      {/* <div style={{ display: "flex", flexDirection: "row" }} id="section2">
         {groups.map((group) => (
           <CardShared group={group}></CardShared>
         ))}
-      </div>
+      </div> */}
     </Fragment>
   );
 };

@@ -4,11 +4,15 @@ import { styled, Theme } from "@mui/system";
 export const useHeroStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
-      height: "80vh",
-      display: "flex",
-      alignItems: "center",
-      margin: "0 0 0 80px",
-      justifyContent: "space-between",
+      flexDirection: "column",
+      [theme.breakpoints.up("md")]: {
+        height: "90vh",
+        display: "flex",
+        alignItems: "center",
+        margin: "0 0 0 80px",
+        justifyContent: "space-between",
+        flexDirection: "row",
+      },
     },
     title: {
       fontSize: "3.5rem !important",
@@ -24,14 +28,27 @@ export const useHeroStyles = makeStyles((theme: Theme) =>
       color: "#777",
       marginTop: "12px !important",
     },
-    imghero: {
-      height: "inherit",
-    },
     containerTitles: {
-      display: "flex",
-      flexDirection: "column",
-      textAlign: "start",
-      width: "40%",
+      [theme.breakpoints.down("md")]: {
+        marginTop: "12px !important",
+      },
+
+      [theme.breakpoints.up("md")]: {
+        display: "flex",
+        flexDirection: "column",
+        textAlign: "start",
+        width: "40%",
+      },
+    },
+    getStartedButton: {
+      marginTop: "12px !important",
+      backgroundColor: "#1d1d1d !important",
+      width: "135px",
+    },
+    imgHero: {
+      [theme.breakpoints.down("xl")]: {
+        height: "inherit",
+      },
     },
   })
 );

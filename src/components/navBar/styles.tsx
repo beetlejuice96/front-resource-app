@@ -14,12 +14,12 @@ export const useNavBarStyles = makeStyles((theme: Theme) =>
       flexDirection: "column",
     },
     bar: {
-      backgroundColor: "white",
       height: "64px",
       width: "100%",
       zIndex: "100",
     },
     appBar: {
+      backdropFilter: "blur(3px)",
       height: "64px",
     },
     toolbar: {
