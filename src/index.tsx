@@ -5,6 +5,7 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { createTheme, ThemeProvider } from "@mui/material";
+import ErrorProvider from "./providers/errorProvider/ErrorProvider";
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -19,9 +20,11 @@ const theme = createTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <ErrorProvider initialValues={{ active: false, message: "" }}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ErrorProvider>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -6,8 +6,8 @@ export interface Context {
     error: Error;
   };
   actions: {
-    openToastError: (message: String) => Promise<void>;
-    closeToastError: () => Promise<void>;
+    openToastError: (message: string) => void;
+    closeToastError: () => void;
   };
 }
 
