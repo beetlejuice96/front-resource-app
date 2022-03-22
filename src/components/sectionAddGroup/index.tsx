@@ -1,11 +1,11 @@
 import { IconButton, TextField, Typography } from "@mui/material";
 import React from "react";
 import CONSTANTS from "../../constants";
-import { useSectionAddGroup } from "./styles";
+import { useSectionAddGroupStyles } from "./styles";
 import AddIcon from "@mui/icons-material/Add";
 const { ROUTES } = CONSTANTS;
 const SectionAddGroup = () => {
-  const classes = useSectionAddGroup();
+  const classes = useSectionAddGroupStyles();
   return (
     <section className={classes.container} id={ROUTES.SECTION1}>
       <Typography className={classes.title}>

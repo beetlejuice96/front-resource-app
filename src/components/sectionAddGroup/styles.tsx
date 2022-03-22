@@ -1,7 +1,7 @@
 import { createStyles, makeStyles } from "@mui/styles";
 import { styled, Theme } from "@mui/system";
 
-export const useSectionAddGroup = makeStyles((theme: Theme) =>
+export const useSectionAddGroupStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       height: "30vh",
