@@ -3,10 +3,11 @@ import React from "react";
 import { useHeroStyles } from "./styles";
 import { Link, animateScroll as scroll } from "react-scroll";
 import CONSTANTS from "../../constants";
+import { useError } from "../../providers/errorProvider/ErrorContext";
 const { ROUTES } = CONSTANTS;
+
 const Hero = () => {
   const classes = useHeroStyles();
-
   return (
     <section className={classes.container}>
       <div className={classes.containerTitles}>

@@ -1,6 +1,6 @@
 import axios from "axios";
-
+import CONFIG from "../configs";
 export const APIClient = axios.create({
-  baseURL: "http://192.168.0.100:5000/api",
+  baseURL: CONFIG.SERVICES.API.URL,
   timeout: 10000,
 });

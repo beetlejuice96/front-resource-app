@@ -11,4 +11,6 @@ export interface Context {
   };
 }
 
-export const ErrorContext = React.createContext({} as Context);
+export const ErrorContext = createContext({} as Context);
+
+export const useError = () => useContext(ErrorContext);

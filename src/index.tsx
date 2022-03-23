@@ -20,7 +20,7 @@ const theme = createTheme({
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <ErrorProvider initialValues={{ active: false, message: "" }}>
+      <ErrorProvider>
         <BrowserRouter>
           <App />
         </BrowserRouter>

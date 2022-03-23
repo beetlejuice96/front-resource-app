@@ -1,19 +1,43 @@
 import { IconButton, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import CONSTANTS from "../../constants";
 import { useSectionAddGroupStyles } from "./styles";
 import AddIcon from "@mui/icons-material/Add";
+import { useError } from "../../providers/errorProvider/ErrorContext";
+import GroupService from "../../services/groupService";
+import { Group } from "../../interfaces/group";
 const { ROUTES } = CONSTANTS;
+
 const SectionAddGroup = () => {
   const classes = useSectionAddGroupStyles();
+  const { actions } = useError();
+  const [titleGroup, setTitleGroup] = useState("");
+  const handleClick = async () => {
+    let r: Group = {
+      title: titleGroup,
+      resources: [],
+    };
+    let response = await GroupService.createGroup(r);
+    if (response.success) {
+      actions.openToastError("SE GENERO EL GRUPO CON EXITO!");
+      setTitleGroup("");
+    } else {
+      actions.openToastError("NO SE PUDO GENERAR EL GRUPO!");
+    }
+  };
+
+  const handleChange = (event: any) => {
+    setTitleGroup(event.target.value);
+  };
+
   return (
     <section className={classes.container} id={ROUTES.SECTION1}>
       <Typography className={classes.title}>
         Add new resources group.
       </Typography>
       <div className={classes.containerTextField}>
-        <TextField></TextField>
-        <IconButton>
+        <TextField onChange={handleChange} value={titleGroup} />
+        <IconButton onClick={handleClick}>
           <AddIcon />
         </IconButton>
       </div>

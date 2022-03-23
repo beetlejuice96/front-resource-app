@@ -1,4 +1,4 @@
-import { IconButton } from "@mui/material";
+import { IconButton, Snackbar } from "@mui/material";
 import React, { useState } from "react";
 import { Error } from "../../interfaces/error";
 import { Context, ErrorContext } from "./ErrorContext";
@@ -8,18 +8,25 @@ interface Props {
   initialValues: Error;
 }
 
-const ErrorProvider: React.FC<Props> = ({ initialValues, children }) => {
-  const [stateError, setStateError] = useState<Error>(initialValues);
+const ErrorProvider: React.FC = ({ children }) => {
+  const [stateError, setStateError] = useState<Error>({
+    active: false,
+    message: "",
+  });
   const openToastError = (message: string) => {
+    console.log("entro");
     setStateError({
       ...stateError,
       message: message,
-      active: !stateError.active,
+      active: true,
     });
   };
 
   const closeToastError = () => {
-    setStateError(initialValues);
+    setStateError({
+      active: false,
+      message: "",
+    });
   };
 
   const button = (
@@ -44,6 +51,13 @@ const ErrorProvider: React.FC<Props> = ({ initialValues, children }) => {
   return (
     <ErrorContext.Provider value={{ state, actions }}>
       {children}
+      <Snackbar
+        open={stateError.active}
+        autoHideDuration={6000}
+        onClose={closeToastError}
+        message={stateError.message}
+        action={button}
+      />
     </ErrorContext.Provider>
   );
 };
