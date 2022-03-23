@@ -1,7 +1,8 @@
 import { createStyles, makeStyles } from "@mui/styles";
-import { styled, Theme } from "@mui/system";
+import { Theme } from "@mui/system";
+import { CustomTheme } from "../..";
 
-export const useSectionAddGroupStyles = makeStyles((theme: Theme) =>
+export const useSectionAddGroupStyles = makeStyles((theme: CustomTheme) =>
   createStyles({
     container: {
       height: "30vh",
@@ -23,10 +24,7 @@ export const useSectionAddGroupStyles = makeStyles((theme: Theme) =>
       padding: "0 30px 0 30px",
     },
     title: {
-      fontSize: "2.5rem !important",
-      color: "#1d1d1d",
-      fontWeight: "1000 !important",
-      lineHeight: "55px !important",
+      ...theme.titleSecond,
     },
     customshapedividertop: {
       position: "absolute",
