@@ -6,12 +6,15 @@ import AddIcon from "@mui/icons-material/Add";
 import { useError } from "../../providers/errorProvider/ErrorContext";
 import GroupService from "../../services/groupService";
 import { Group } from "../../interfaces/group";
+import { useGroup } from "../../providers/groupProvider/groupContext";
 const { ROUTES } = CONSTANTS;
 
 const SectionAddGroup = () => {
   const classes = useSectionAddGroupStyles();
   const { actions } = useError();
+  const { actions: actionsGroups } = useGroup();
   const [titleGroup, setTitleGroup] = useState("");
+  const [isError, setIsError] = useState<boolean>(false);
   const handleClick = async () => {
     let r: Group = {
       title: titleGroup,
@@ -21,7 +24,9 @@ const SectionAddGroup = () => {
     if (response.success) {
       actions.openToastError("SE GENERO EL GRUPO CON EXITO!");
       setTitleGroup("");
+      actionsGroups.handleGroups();
     } else {
+      setIsError(!isError);
       actions.openToastError("NO SE PUDO GENERAR EL GRUPO!");
     }
   };
@@ -36,7 +41,7 @@ const SectionAddGroup = () => {
         Add new resources group.
       </Typography>
       <div className={classes.containerTextField}>
-        <TextField onChange={handleChange} value={titleGroup} />
+        <TextField error={isError} onChange={handleChange} value={titleGroup} />
         <IconButton onClick={handleClick}>
           <AddIcon />
         </IconButton>

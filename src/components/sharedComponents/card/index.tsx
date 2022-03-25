@@ -2,7 +2,7 @@ import React from "react";
 import Card from "@mui/material/Card";
 import { Group } from "../../../interfaces/group";
 import { CardContent, Typography } from "@mui/material";
-import { useCardStyles } from "./styles";
+import { useCardStyles, StyledCard } from "./styles";
 
 export interface propsCard {
   group: Group;
@@ -15,7 +15,7 @@ const Subtitle = () => {
 export default function CardShared({ group }: propsCard) {
   const classes = useCardStyles();
   return (
-    <Card className={classes.container}>
+    <StyledCard className={classes.container}>
       <CardContent className={classes.containerContent}>
         <div className={classes.containerTitle}>
           {group.resources.length > 0 ? (
@@ -30,6 +30,6 @@ export default function CardShared({ group }: propsCard) {
           <Typography className={classes.title}>{group.title}</Typography>
         </div>
       </CardContent>
-    </Card>
+    </StyledCard>
   );
 }

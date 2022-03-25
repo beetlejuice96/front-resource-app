@@ -1,19 +1,17 @@
-import { Fragment, useEffect, useState } from "react";
+import { Fragment } from "react";
 import Hero from "../components/hero";
 import SectionAddGroup from "../components/sectionAddGroup";
 import ShowGroups from "../components/SectionShowGroups";
-import CardShared from "../components/sharedComponents/card";
-import { Group } from "../interfaces/group";
-import { Resource, ResourceByIdRequest } from "../interfaces/resource";
-import groupService from "../services/groupService";
-import resourceService from "../services/resourceService";
+import GroupProvider from "../providers/groupProvider/groupProvider";
 
 const Home = () => {
   return (
     <Fragment>
       <Hero />
-      <SectionAddGroup />
-      <ShowGroups />
+      <GroupProvider>
+        <SectionAddGroup />
+        <ShowGroups />
+      </GroupProvider>
       {/* <div style={{ display: "flex", flexDirection: "row" }} id="section2">
         {groups.map((group) => (
           <CardShared group={group}></CardShared>

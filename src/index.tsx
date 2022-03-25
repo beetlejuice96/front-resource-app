@@ -4,8 +4,11 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
-import { createTheme, ThemeProvider } from "@mui/material";
+import { createTheme, Theme, ThemeProvider } from "@mui/material";
 import ErrorProvider from "./providers/errorProvider/ErrorProvider";
+import styled, {
+  ThemeProvider as ThemeProviderStyled,
+} from "styled-components";
 
 const themeCustom = {
   breakpoints: {
@@ -39,11 +42,13 @@ const theme = createTheme(themeCustom);
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <ErrorProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </ErrorProvider>
+      <ThemeProviderStyled theme={theme}>
+        <ErrorProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </ErrorProvider>
+      </ThemeProviderStyled>
     </ThemeProvider>
   </React.StrictMode>,
   document.getElementById("root")

@@ -5,11 +5,12 @@ export const useHeroStyles = makeStyles((theme: Theme) =>
   createStyles({
     container: {
       flexDirection: "column",
+      width: "inherit",
       [theme.breakpoints.up("md")]: {
         height: "90vh",
         display: "flex",
         alignItems: "center",
-        margin: "0 0 0 80px",
+        margin: "0 80px 0 80px",
         justifyContent: "space-between",
         flexDirection: "row",
       },
@@ -46,8 +47,18 @@ export const useHeroStyles = makeStyles((theme: Theme) =>
       width: "135px",
     },
     imgHero: {
+      height: "inherit",
       [theme.breakpoints.down("xl")]: {
-        height: "inherit",
+        height: "100%",
+        width: "100%",
+      },
+      [theme.breakpoints.down("lg")]: {
+        height: "70%",
+        width: "inherit",
+      },
+      [theme.breakpoints.down("md")]: {
+        height: "55%",
+        width: "100%",
       },
     },
   })

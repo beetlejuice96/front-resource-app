@@ -1,4 +1,4 @@
-import { Button, Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import React from "react";
 import { useHeroStyles } from "./styles";
 import { Link, animateScroll as scroll } from "react-scroll";
@@ -29,7 +29,9 @@ const Hero = () => {
           </Link>
         </Button>
       </div>
+      {/* <Container maxWidth="lg"> */}
       <img src="/purr-magic.png" alt="imghero" className={classes.imgHero} />
+      {/* </Container> */}
     </section>
   );
 };
