@@ -49,13 +49,13 @@ export const useHeroStyles = makeStyles((theme: Theme) =>
     imgHero: {
       height: "inherit",
       [theme.breakpoints.down("xl")]: {
-        height: "100%",
-        width: "100%",
+        width: "60%",
+        height: "auto",
       },
-      [theme.breakpoints.down("lg")]: {
-        height: "70%",
-        width: "inherit",
-      },
+      // [theme.breakpoints.down("lg")]: {
+      //   height: "70%",
+      //   width: "inherit",
+      // },
       [theme.breakpoints.down("md")]: {
         height: "55%",
         width: "100%",
