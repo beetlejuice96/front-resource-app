@@ -1,5 +1,5 @@
 export type Group = {
-  id?: string;
+  _id?: string;
   title: string;
   resources: string[];
   createdAt?: Date;
