@@ -6,5 +6,12 @@ export const useModalGroupStyles = makeStyles((theme: Theme) =>
     container: {
       zIndex: "99001 !important",
     },
+    containerContent: {
+      width: "500px",
+      textAlign: "center",
+    },
+    addResourceButton: {
+      backgroundColor: "#1d1d1d !important",
+    },
   })
 );
